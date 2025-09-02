@@ -1,0 +1,18 @@
+# Robot physical parameters
+robot:
+  base_width: 0.4      # Distance between left and right wheels (m)
+  base_length: 0.5     # Distance between front and rear wheels (m)
+  wheel_radius: 0.1    # Wheel radius (m)
+  max_linear_velocity: 1.0    # Maximum linear velocity (m/s)
+  max_angular_velocity: 2.0   # Maximum angular velocity (rad/s)
+
+# Controller parameters
+controller:
+  publish_frequency: 50.0  # Hz
+  cmd_vel_timeout: 0.5     # seconds
+  
+# Motor parameters
+motors:
+  max_rpm: 100           # Maximum motor RPM
+  encoder_resolution: 1000  # Encoder pulses per revolution
+  gear_ratio: 20         # Gear reduction ratio
