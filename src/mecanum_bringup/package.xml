@@ -20,7 +20,7 @@
 
   <!-- Robot packages -->
   <exec_depend>mecanum_description</exec_depend>
-  <exec_depend>mecanum_control</exec_depend>
+  <exec_depend>mecanum_kinematics</exec_depend>
   <exec_depend>mecanum_msgs</exec_depend>
   <exec_depend>mecanum_teleop</exec_depend>
 

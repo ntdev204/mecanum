@@ -58,11 +58,11 @@ def generate_launch_description():
         }]
     )
     
-    # Mecanum controller node
-    mecanum_controller = Node(
-        package='mecanum_control',
-        executable='mecanum_control_node',
-        name='mecanum_controller',
+    # Mecanum kinematics node
+    mecanum_kinematics = Node(
+        package='mecanum_kinematics',
+        executable='mecanum_kinematics_node',
+        name='mecanum_kinematics',
         output='screen',
         parameters=[{
             'use_sim_time': LaunchConfiguration('use_sim_time')
@@ -72,7 +72,7 @@ def generate_launch_description():
     
     # Odometry node
     odometry_node = Node(
-        package='mecanum_control',
+        package='mecanum_kinematics',
         executable='odometry.py',
         name='mecanum_odometry',
         output='screen',
@@ -106,7 +106,7 @@ def generate_launch_description():
         use_controller_arg,
         robot_state_publisher,
         joint_state_publisher,
-        mecanum_controller,
+        mecanum_kinematics,
         odometry_node,
         rviz_group,
     ])

@@ -1,16 +1,16 @@
-#include "mecanum_control/controller.hpp"
+#include "mecanum_kinematics/kinematics.hpp"
 
-MecanumController::MecanumController() 
-: Node("mecanum_control_node"), L_(0.3), W_(0.2), R_(0.05) {
+MecanumKinematics::MecanumKinematics() 
+: Node("mecanum_kinematics_node"), L_(0.3), W_(0.2), R_(0.05) {
     cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 10, std::bind(&MecanumController::cmdVelCallback, this, std::placeholders::_1)
+        "cmd_vel", 10, std::bind(&MecanumKinematics::cmdVelCallback, this, std::placeholders::_1)
     );
     wheel_vel_pub_ = this->create_publisher<mecanum_msgs::msg::WheelVelocity>("wheel_vel", 10);
 
-    RCLCPP_INFO(this->get_logger(), "Mecanum controller node started");
+    RCLCPP_INFO(this->get_logger(), "Mecanum kinematics node started");
 }
 
-void MecanumController::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
+void MecanumKinematics::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
     double vx = msg->linear.x;
     double vy = msg->linear.y;
     double wz = msg->angular.z;

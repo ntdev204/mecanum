@@ -4,9 +4,9 @@
 #include "geometry_msgs/msg/twist.hpp"
 #include "mecanum_msgs/msg/wheel_velocity.hpp"
 
-class MecanumController : public rclcpp::Node {
+class MecanumKinematics : public rclcpp::Node {
 public:
-    MecanumController();
+    MecanumKinematics();
 
 private:
     void cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg);

@@ -9,7 +9,7 @@ mecanum/
 ├── src/
 │   ├── mecanum_msgs/          # Custom messages cho robot
 │   ├── mecanum_description/   # URDF và visualization
-│   ├── mecanum_control/       # Node điều khiển robot
+│   ├── mecanum_kinematics/    # Node tính toán kinematics robot
 │   └── mecanum_bringup/      # Launch files và scripts
 ```
 
@@ -176,11 +176,11 @@ src/
 │   │   └── mecanum_robot.rviz
 │   ├── CMakeLists.txt
 │   └── package.xml
-├── mecanum_control/
-│   ├── include/mecanum_control/
-│   │   └── controller.hpp
+├── mecanum_kinematics/
+│   ├── include/mecanum_kinematics/
+│   │   └── kinematics.hpp
 │   ├── src/
-│   │   └── controller.cpp
+│   │   └── kinematics.cpp
 │   ├── CMakeLists.txt
 │   └── package.xml
 └── mecanum_bringup/

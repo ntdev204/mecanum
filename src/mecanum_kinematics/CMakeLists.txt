@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(mecanum_control)
+project(mecanum_kinematics)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -11,8 +11,8 @@ find_package(mecanum_msgs REQUIRED)
 
 include_directories(include)
 
-add_executable(mecanum_control_node src/main.cpp src/controller.cpp)
-ament_target_dependencies(mecanum_control_node
+add_executable(mecanum_kinematics_node src/main.cpp src/kinematics.cpp)
+ament_target_dependencies(mecanum_kinematics_node
   rclcpp
   geometry_msgs
   nav_msgs
@@ -22,7 +22,7 @@ ament_target_dependencies(mecanum_control_node
 )
 
 install(TARGETS
-  mecanum_control_node
+  mecanum_kinematics_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
