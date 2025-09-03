@@ -100,7 +100,7 @@ class MecanumTeleop(Node):
                     current_twist = self.create_twist_msg(linear_x=self.linear_speed)
                     self.get_logger().info('Moving forward')
                     
-                elif key == 'x':  # Backward
+                elif key == 's':  # Backward
                     current_twist = self.create_twist_msg(linear_x=-self.linear_speed)
                     self.get_logger().info('Moving backward')
                     
@@ -149,11 +149,6 @@ class MecanumTeleop(Node):
                 elif key == 'i':  # Rotate right
                     current_twist = self.create_twist_msg(angular_z=-self.angular_speed)
                     self.get_logger().info('Rotating right')
-                    
-                # Stop
-                elif key == 's':
-                    current_twist = self.create_twist_msg()
-                    self.get_logger().info('Stopping')
                     
                 # Speed control
                 elif key == 't':  # Increase linear speed
